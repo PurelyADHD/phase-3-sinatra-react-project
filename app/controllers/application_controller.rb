@@ -5,5 +5,21 @@ class ApplicationController < Sinatra::Base
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
+  
+  post "/signup" do
+      binding.pry
+      if User.find_by(username: user_params[:username])
+        {message: "Username exists. Please login..."}
+      else
+        @user = User..create(user_params)
+        @user.to_json
+  end
+
+  private
+  def user_params
+    allowed_params =%w(username password)
+    params.select{ |param, value| allowed_params.include?(param)}
+  end
+
 
 end
