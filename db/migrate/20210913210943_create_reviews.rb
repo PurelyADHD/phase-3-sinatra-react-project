@@ -9,3 +9,6 @@ class CreateReviews < ActiveRecord::Migration[6.1]
     end
   end
 end
+
+#Create API routes in Sinatra that handles at least three different CRUD actions for at least one of your Active Record models.
+#Update comments/ratings, post new comments, delete comments
