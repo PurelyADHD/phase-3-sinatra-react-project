@@ -40,6 +40,26 @@ end
         params.select{ |param, value| allowed_params.include?(param) }
     end
 
+    get '/reviews' do
+      @user = User.find_by(id: params["user_id"])
+
+      if @user
+        @reviews = @user.reviews
+        @reviews.to_json
+    end
+  end
+
+  delete "/reviews/:id" do
+    @reviews = Review.find_by(id: params[:id])
+
+    if @review.user_id == params["user_id"].to_i
+      @review.detroy
+      { message : "Review was deleted.."}.to_json
+    else
+      { message: "You're not authorized."}
+  end
+end
+
   get '/users' do
     User.all.to_json
   end
