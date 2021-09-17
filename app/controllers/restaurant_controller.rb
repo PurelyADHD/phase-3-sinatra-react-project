@@ -9,4 +9,12 @@ class RestaurantController < Sinatra::Base
         {"restaurant": params["category"]}.to_json
     end
 
+    private
+
+    # def serialize(objects)
+    #     objects.to_json(
+    #         methods: [:review_comment]
+    #     )
+    # end
+
 end
