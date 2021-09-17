@@ -11,8 +11,8 @@ puts "🌱 Seeding data..."
 
 # Users
 u1 = User.create(name: 'Dorian', username: "FoodLuver21", password: "lovefood")
-u2 = User.create(name: 'Carter', username: "Gulper9000", password: "gulpgulp" )
-u3 = User.create(name: 'Howard', username: "MukbangStar", password: "asmrcrunch" )
+u2 = User.create(name: 'Carter', username: "Gulper9000", password: "gulpgulp")
+u3 = User.create(name: 'Howard', username: "MukbangStar", password: "asmrcrunch")
 
 # Restaurants
 r1 = Restaurant.create(
